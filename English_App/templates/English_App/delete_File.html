@@ -1,0 +1,23 @@
+{% extends 'English_App/basic.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="container">
+	
+
+
+		<form method="POST">
+            {% csrf_token %}
+            <h5 >Are you sure you want to delete "{{deleteFile.title}}"</h5>
+            <input class="btn btn-lg btn-danger" action="home" type="submit" value="yes">
+            <a href="{% url 'addfile'  %}" class="btn btn-lg btn-info ml-2"> Cancel</a>
+          
+
+
+        </form>
+
+			
+</div>
+
+{% endblock %}

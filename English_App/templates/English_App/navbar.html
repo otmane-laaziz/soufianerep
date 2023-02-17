@@ -1,0 +1,51 @@
+{% load static %}
+
+<div class="menu-bar">
+    <ul>
+        <li> <a href="{% url 'index' %}">home for laazzi</a></li>
+        <li><a href="{% url 'courseDetail' %}">Courses</a></li>
+        {% if user.is_authenticated and user.is_staff and user.is_superuser%}
+        <li> <a href="{% url 'AddCourse' %}">Add Course</a></li>
+        {% endif %}
+       
+        <li> <a href="{% url 'upload_video' %}">Videos</a></li>
+        
+       
+        <li><a href="{% url 'addfile' %}">Files</a></li>
+       
+      
+        {% if user.is_authenticated  and user.is_superuser%}
+        <li><a href="{% url 'displayPostForms' %}">People's <br>messages</a></li>
+        {% endif %}
+        {% if user.is_authenticated  and user.is_superuser%}
+        <li><a href="{% url 'displaytable' %}">Table <br>of users</a></li>
+        {% endif %}
+        {% if user.is_authenticated or user.is_staff or user.is_superuser%}
+        <li><a href="{% url 'postUsers' %}">Users<br> articles</a></li>
+        {% endif %}
+        {% if user.is_authenticated or user.is_staff or user.is_superuser%}
+        <li><a href="{% url 'displayUsersArticaleList' %}">Articles<br> list</a></li>
+        {% endif %}
+        <!--
+        {% if user.is_authenticated and user.is_staff and user.is_superuser%}
+        <li><a href="{% url 'AddHomeworks' %}">Add<br> homework</a></li>
+        {% endif %}
+        {% if user.is_authenticated or user.is_staff or user.is_superuser%}
+        <li><a href="{% url 'Homeworklist' %}"> homework</a></li>
+        {% endif %}
+        -->
+        {% if not user.is_superuser%}
+        <li><a href="{% url 'contactPost' %}">Contact us</a></li>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <li>Hello,{{user.first_name}}</li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'register' %}">Register</a></li>
+        <li><a href="{% url 'login' %}">Log in</a></li>
+        {% endif %}
+   
+   
+   
+    </ul> 
+   </div> 

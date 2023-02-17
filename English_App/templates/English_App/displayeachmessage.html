@@ -1,0 +1,57 @@
+{%  extends 'English_App/basic.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" type="text/css"  href="{% static '/css/test.css' %}">
+    <title>Users posts</title>
+</head>
+
+    
+
+<body class="displaypostsbody">
+	
+
+				
+				
+					<div class="postslist">
+                        
+                           
+                           
+                            
+							
+					
+
+					
+						
+                               
+                            <h4><strong>First Name :</strong> {{displayeachmessage.first_name}}</h4>
+                            <h4><strong>Last Name :</strong> {{displayeachmessage.last_name}}</h4>
+                            <h4><strong>Email : </strong>{{displayeachmessage.email_address}}</h4>
+                            <h4><strong>Phone Number :</strong> {{displayeachmessage.phone_number}}</h4>
+                            <h4><strong>Message : </strong></h4>
+                            
+                            
+                            <h4>{{displayeachmessage.body | safe}}</h4>
+                            <hr>
+                               
+								
+                               
+                                
+								
+							
+					
+						
+					
+				
+		</div>
+
+
+
+</body>
+</html>
+{% endblock content %}
