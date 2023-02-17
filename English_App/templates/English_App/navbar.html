@@ -2,7 +2,7 @@
 
 <div class="menu-bar">
     <ul>
-        <li> <a href="{% url 'index' %}">home for otmane</a></li>
+        <li> <a href="{% url 'index' %}">home for salwa</a></li>
         <li><a href="{% url 'courseDetail' %}">Courses</a></li>
         {% if user.is_authenticated and user.is_staff and user.is_superuser%}
         <li> <a href="{% url 'AddCourse' %}">Add Course</a></li>
