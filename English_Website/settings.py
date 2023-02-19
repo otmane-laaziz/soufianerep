@@ -1,5 +1,5 @@
 
-import tkinter
+
 
 
 import os
@@ -163,4 +163,3 @@ GRAPH_MODELS ={
 
 django_heroku.settings(locals())
 
-tkinter._test()
