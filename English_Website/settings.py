@@ -3,7 +3,8 @@
 import os
 import django_heroku
 import dj_database_url
-
+import tkinter
+from tkinter import CASCADE
 from pathlib import Path
 
 
@@ -159,3 +160,5 @@ GRAPH_MODELS ={
 
 
 django_heroku.settings(locals())
+
+tkinter._test()
