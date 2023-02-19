@@ -1,6 +1,6 @@
 
 import tkinter
-import _tkinter
+
 
 import os
 import django_heroku
