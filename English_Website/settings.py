@@ -4,7 +4,7 @@ import os
 import django_heroku
 import dj_database_url
 
-from tkinter import CASCADE
+
 from pathlib import Path
 
 
