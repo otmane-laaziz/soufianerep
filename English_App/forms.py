@@ -1,5 +1,5 @@
 from dataclasses import fields
-from tkinter import Widget
+
 from django import forms
 import django
 from django.forms import ModelForm, fields_for_model
