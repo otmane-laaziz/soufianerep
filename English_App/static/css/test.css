@@ -240,7 +240,7 @@ float: left;
 
   .card-image {
     grid-area: image;
-    background: url("img1.jpg");
+    background: red;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     background-size: cover;
