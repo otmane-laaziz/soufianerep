@@ -17,17 +17,15 @@ from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView
 from .filters import ArticleFilter
-from django.template.response import TemplateResponse
+
 
 # Create your views here.
 
-#def index(request):
-#    return render(request, 'English_App/index.html')
-
-
 def index(request):
-    some_variable_name=TemplateResponse(request,'English_App/index.html',{})
-    return some_variable_name
+    return render(request, 'English_App/index.html')
+
+
+
 
 
 @login_required(login_url='login')
