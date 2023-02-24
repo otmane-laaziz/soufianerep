@@ -1,9 +1,12 @@
 
 
+
+
 import os
 import django_heroku
-import dj_database_url
-from decouple import config
+
+
+
 from pathlib import Path
 
 
@@ -20,9 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r!)+o@o+0i2amyor^6it+u&p#wqal*!8q55!cntxfbn!8mqp1i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if os.environ.get('ON_HEROKU', '0') == '0':
+    DEBUG = True
+else:
+    DEBUG = False
 
-ALLOWED_HOSTS = ['englishlearning.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['englishlearning.herokuapp.com',
+    '127.0.0.1',]
 
 
 # Application definition
@@ -80,16 +87,25 @@ WSGI_APPLICATION = 'English_Website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost'  
-    }
-}
 
+
+
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'test',
+            'USER': 'root',
+            'PASSWORD': '',
+            'HOST': 'localhost' 
+        }
+    }
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES [ 'default'].update(db_from_env)
+       
+ 
+    
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -134,7 +150,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "English_App/static"),
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 MEDIA_URL="/images/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -159,3 +175,4 @@ GRAPH_MODELS ={
 
 
 django_heroku.settings(locals())
+
