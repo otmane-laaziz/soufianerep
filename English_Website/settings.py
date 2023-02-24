@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'English_App',
     'ckeditor',
     'decouple',
-    'widget_tweaks', 
+  
     'django_extensions',
     'django_filters',
     'django_heroku',
