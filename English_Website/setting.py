@@ -2,6 +2,7 @@
 
 
 
+
 import os
 import django_heroku
 
@@ -44,7 +45,7 @@ INSTALLED_APPS = [
     'English_App',
     'ckeditor',
     'decouple',
-  
+    'widget_tweaks', 
     'django_extensions',
     'django_filters',
     'django_heroku',
@@ -172,3 +173,7 @@ GRAPH_MODELS ={
 
 
 django_heroku.settings(locals())
+
+
+
+
