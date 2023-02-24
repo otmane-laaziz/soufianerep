@@ -4,7 +4,7 @@
 
 import os
 import django_heroku
-import dj_database_url
+
 
 
 from pathlib import Path
@@ -89,8 +89,7 @@ WSGI_APPLICATION = 'English_Website.wsgi.application'
 
 
 
-if os.environ.get('ON_HEROKU', '0') == '0':
-    DATABASES = {
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'test',
@@ -99,11 +98,11 @@ if os.environ.get('ON_HEROKU', '0') == '0':
             'HOST': 'localhost' 
         }
     }
-else:
-    DATABASES = {
-        # TODO: what does this max_age setting do?
-        'default' : dj_database_url.config(conn_max_age=600)
-    }
+
+import dj_database_url
+
+db_from_env =  dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)  
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
