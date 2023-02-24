@@ -23,6 +23,11 @@ from .filters import ArticleFilter
 
 def index(request):
     return render(request, 'English_App/index.html')
+
+
+
+
+
 @login_required(login_url='login')
 def homepagetest(request):
     return render(request, 'English_App/homepagetest.html')

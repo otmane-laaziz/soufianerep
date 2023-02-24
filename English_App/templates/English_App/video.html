@@ -26,7 +26,7 @@
         {% csrf_token %}
         {% if user.is_authenticated  and user.is_superuser%}
         {{video_form.as_table}}
-        <button class="btn btn-primary"  >Upload</button>
+        <button class="btn btn-primary"  >Upload here</button>
         {% endif %}
         </form>
         </div >

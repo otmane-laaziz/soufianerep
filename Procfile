@@ -1,1 +1,1 @@
-web : gunicorn English_Website.wsgi 
+web: gunicorn English_Website.wsgi 
