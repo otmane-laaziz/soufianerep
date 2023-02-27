@@ -73,7 +73,7 @@
                         {% endif %}
                         {% if user.is_authenticated %}
                         <li>Hello,{{user.first_name}}</li>
-                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        <li><a href="{% url 'logout' %}">Logout MR</a></li>
                         {% else %}
                         <li><a href="{% url 'register' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">Log in</a></li>
