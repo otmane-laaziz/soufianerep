@@ -11,6 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
     <link  rel="stylesheet" type="text/css"  href="{% static '/css/test.css' %}"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
 <body>
@@ -33,32 +34,32 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li> <a href="{% url 'index' %}">home today</a></li>
-                        <li><a href="{% url 'courseDetail' %}">Courses</a></li>
+                        <li> <a href="{% url 'index' %}"><span class="glyphicon glyphicon-home"></span></a></li>
+                        <li><a href="{% url 'courseDetail' %}"><span class="glyphicon glyphicon-education"></span>Courses</a></li>
                         {% if user.is_authenticated and user.is_staff and user.is_superuser%}
-                        <li> <a href="{% url 'AddCourse' %}">Add <br>Course</a></li>
+                        <li> <a href="{% url 'AddCourse' %}">Add course</a></li>
                         {% endif %}
                      
-                        <li> <a href="{% url 'upload_video' %}">Videoses</a></li>
+                        <li> <a href="{% url 'upload_video' %}"><span class="glyphicon glyphicon-play-circle"></span>Videos</a></li>
                         
                        
-                        <li><a href="{% url 'addfile' %}">Files</a></li>
+                        <li><a href="{% url 'addfile' %}"><span class="glyphicon glyphicon-file"></span>Files</a></li>
                       
                        
                        
-                       
+                        
                       
                         {% if user.is_authenticated  and user.is_superuser%}
-                        <li><a href="{% url 'displayPostForms' %}">People's <br>messages</a></li>
+                        <li><a href="{% url 'displayPostForms' %}"><i class="glyphicon glyphicon-envelope">messages</i></a></li>
                         {% endif %}
                         {% if user.is_authenticated  and user.is_superuser%}
-                        <li><a href="{% url 'displaytable' %}">Table<br> of users</a></li>
+                        <li><a href="{% url 'displaytable' %}"><i class="glyphicon glyphicon-user"></i>users</a></li>
                         {% endif %}
                         {% if user.is_authenticated or user.is_staff or user.is_superuser%}
-                        <li><a href="{% url 'postUsers' %}">Users <br>articles</a></li>
+                        <li><a href="{% url 'postUsers' %}">Add article</a></li>
                         {% endif %}
                         {% if user.is_authenticated  and user.is_superuser%}
-                        <li><a href="{% url 'displayUsersArticaleList' %}">Articles <br>list</a></li>
+                        <li><a href="{% url 'displayUsersArticaleList' %}"><span class="glyphicon glyphicon-list-alt"></span>Articles list</a></li>
                         {% endif %}
                         <!--
                         {% if user.is_authenticated or user.is_staff or user.is_superuser%}
@@ -72,8 +73,8 @@
                         <li><a href="{% url 'contactPost' %}">Contact us</a></li>
                         {% endif %}
                         {% if user.is_authenticated %}
-                        <li>Hello,{{user.first_name}}</li>
-                        <li><a href="{% url 'logout' %}">Logout MR</a></li>
+                        <li class="name"><h5>Hello,{{user.first_name}}</h5></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
                         {% else %}
                         <li><a href="{% url 'register' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">Log in</a></li>
@@ -109,7 +110,7 @@
                 </div>
                 <div class="item">
                     <div class="banner" >
-                        <img src="{% static 'images/face2.webp' %} " alt="English1" style="width:100%; height:100%;">
+                        <img src="{% static 'images/englishimage.webp' %} " alt="English1" style="width:100%; height:100%;">
                     </div>
                     <div class="carousel-caption">
                         <h2 class="animated slideInDown" style="animation-delay: 1s">We Are <span>Creative</span></h2>
@@ -119,7 +120,7 @@
                 </div>
                 <div class="item">
                     <div class="banner" >
-                        <img src="{% static 'images/englishbinary.jpg' %} " alt="English1" style="width:100%; height:100%;">
+                        <img src="{% static 'images/englisheasy.jpg' %} " alt="English1" style="width:100%; height:100%;">
                     </div>
                     <div class="carousel-caption">
                         <h2 class="animated zoomIn" style="animation-delay: 1s">We Are <span>Here For You</span></h2>

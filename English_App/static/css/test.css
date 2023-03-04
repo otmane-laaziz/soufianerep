@@ -1,3 +1,6 @@
+.name{
+color: white;
+}
 #homebody{
     
    
@@ -9,11 +12,16 @@
 
     
 }
+.btnbtn-primary{
+  background-color: Blue;
+}
 #bodyarticlelist{
-  background-color: lightgreen;
+  background-color: lightblue;
 }
 #bodyarticledetail{
-  background-color: lightgreen;
+  background-color: lightblue;
+  word-wrap    : break-word;
+    overflow-wrap: break-word;
 }
 
 #articlediv2{
@@ -51,7 +59,7 @@
 }
 
 .menu-bar{
-    background:green;
+    background:blue;
     text-align: center;
     width: 100%;
     height: 70px;
@@ -264,15 +272,13 @@ float: left;
     width: 100px;
 }
 
-#newsbody{
-    background-color: lightgreen;
-}
+
 #videobody{
-    background-color: lightgreen;
+    background-color: lightblue;
 }
 
 #filebody{
-    background-color: lightgreen;
+    background-color: lightblue;
 }
 
 #signupbody{
@@ -281,10 +287,10 @@ float: left;
 }
 .displayuserbody{
     color:black;
-    background-color: lightgreen;
+    background-color: lightblue;
 }
 #userarticlebody{
-  background-color: lightgreen;
+  background-color: lightblue;
 }
 /* login and register */
 *{
@@ -511,7 +517,7 @@ header .carousel-inner .item {
 
 /* login final */
 #bodylogin{font-family: Arial, Helvetica, sans-serif;
-    background-color: lightgreen;
+    background-color: lightblue;
 
 }
 
@@ -552,7 +558,7 @@ button:hover {
   padding: 16px;
   margin-left: 400px;
   margin-top: 20px;
-  background-color:green;
+  background-color:blue;
   width: 450px;
   height: 450px;
 }
@@ -589,14 +595,14 @@ span.psw {
   #registerid {
     padding: 16px;
    margin-left: 450px;
-    background-color:green;
+    background-color:blue;
     margin-top: 20px;
     width: 450px;
     height: 800px;
     
   }
   #registerbody{
-    background-color: lightgreen;
+    background-color: lightblue;
   }
   
   /* Full-width input fields */
@@ -683,7 +689,7 @@ span.psw {
   }
   
   #coursebody{
-    background-color: white;
+    background-color: lightblue;
   }
   #condactid {
     border-radius: 5px;
@@ -712,7 +718,7 @@ span.psw {
 
     /* display posts css */
     .displaypostsbody{
-        background-color: lightgreen;
+        background-color: lightblue;
     }
 
 
@@ -753,7 +759,7 @@ span.psw {
   #coursediv2{
     word-wrap    : break-word;
     overflow-wrap: break-word;
-    background-color:white;
+    background-color:lightblue;
     margin-left: 150px;
     margin-top: 0px;
     padding:20px;
@@ -788,6 +794,6 @@ span.psw {
   }
 
 #coursebody{
-  background-color: lightgreen;
+  background-color: lightblue;
 }
 

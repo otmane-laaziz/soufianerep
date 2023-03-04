@@ -27,7 +27,7 @@
             <br>
             <br>
             {% if user.is_authenticated and user.is_staff and user.is_superuser%}
-          <a class="btn btn-sm btn-danger" id="videodeletebutton" href="{% url 'deleteMessages' x.id %}">Delete</a>
+          <a class="btn btn-sm btn-danger" id="videodeletebutton" href="{% url 'deleteMessages' x.id %}"><span class="glyphicon glyphicon-trash"></span>Delete</a>
         {% endif %}
         <br>
         </div>

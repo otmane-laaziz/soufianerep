@@ -2,29 +2,29 @@
 
 <div class="menu-bar">
     <ul>
-        <li> <a href="{% url 'index' %}">home for otmane</a></li>
-        <li><a href="{% url 'courseDetail' %}">Courses</a></li>
+        <li> <a href="{% url 'index' %}"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li><a href="{% url 'courseDetail' %}"><span class="glyphicon glyphicon-education"></span>Courses</a></li>
         {% if user.is_authenticated and user.is_staff and user.is_superuser%}
         <li> <a href="{% url 'AddCourse' %}">Add Course</a></li>
         {% endif %}
        
-        <li> <a href="{% url 'upload_video' %}">Videoses</a></li>
+        <li> <a href="{% url 'upload_video' %}"><span class="glyphicon glyphicon-play-circle"></span>Videos</a></li>
         
        
-        <li><a href="{% url 'addfile' %}">Files</a></li>
+        <li><a href="{% url 'addfile' %}"><span class="glyphicon glyphicon-file"></span>Files</a></li>
        
       
         {% if user.is_authenticated  and user.is_superuser%}
-        <li><a href="{% url 'displayPostForms' %}">People's <br>messages</a></li>
+        <li><a href="{% url 'displayPostForms' %}"><i class="glyphicon glyphicon-envelope">messages</i></a></li>
         {% endif %}
         {% if user.is_authenticated  and user.is_superuser%}
-        <li><a href="{% url 'displaytable' %}">Table <br>of users</a></li>
+        <li><a href="{% url 'displaytable' %}"><i class="glyphicon glyphicon-user"></i>users</a></li>
         {% endif %}
         {% if user.is_authenticated or user.is_staff or user.is_superuser%}
-        <li><a href="{% url 'postUsers' %}">Users<br> articles</a></li>
+        <li><a href="{% url 'postUsers' %}">Add article</a></li>
         {% endif %}
         {% if user.is_authenticated or user.is_staff or user.is_superuser%}
-        <li><a href="{% url 'displayUsersArticaleList' %}">Articles<br> list</a></li>
+        <li><a href="{% url 'displayUsersArticaleList' %}"><span class="glyphicon glyphicon-list-alt"></span>Articles list</a></li>
         {% endif %}
         <!--
         {% if user.is_authenticated and user.is_staff and user.is_superuser%}
