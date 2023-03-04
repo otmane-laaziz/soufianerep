@@ -34,30 +34,14 @@
     
     <h4>{{articledetails.body | safe}}</h4>
 
-    <Br>
-        <hr>
-      <h4>Comments...</h1>
-        <hr>
-       
-        No comments yet...<a href="{% url 'CreateComments' %}">Add one</a>
+  
 
     
       
        
               
        
-        <p>  {% for x in comments %}
-            {{ x.name}}
-            {{ x.comment}}
-            <br>
-    
-            {% endfor %}
-           
-        </p>
-
-        <button id="hide">Hide</button>
-        <button id="show">Show</button>  
-      
+       
        
 </div>
 

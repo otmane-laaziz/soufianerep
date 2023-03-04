@@ -40,7 +40,7 @@
       <h1 class="card-title">{{i.title}}</h1>
       <div class="card-body">
         {% if user.is_authenticated and  user.is_staff and user.is_superuser%}
-        <a class="btn btn-sm btn-danger" href="{% url 'deleteFile' i.id  %}">Delete</a>
+        <a class="btn btn-sm btn-danger" href="{% url 'deleteFile' i.id  %}"><span class="glyphicon glyphicon-trash"></span>Delete</a>
         {% endif %}
         
         <!--<button id="filedetailbutton"><h4><a href="{% url 'filedetail' i.id %}">Click for detail</a></h4></button><br>-->

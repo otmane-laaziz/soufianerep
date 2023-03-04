@@ -1,6 +1,7 @@
 
 
-{% extends 'English_App/basic.html' %}
+
+{% load widget_tweaks %}  
 {% load static %}
 {% block content %}
 <!DOCTYPE html>
@@ -31,7 +32,8 @@
     {{form_update_user.username}}
 
     <label  ><b>Email</b></label>
-    {{form_update_user.email}}
+    
+    {% render_field form_update_user.email class="form-control is-valid" placeholder="Email" type="text" %} 
    
 
     <label for="password"><b>Password</b></label>
