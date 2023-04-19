@@ -1,0 +1,67 @@
+{%  extends 'English_App/basic.html' %}
+
+
+{% block content %}
+
+<body class="displayuserbody">
+		<br>
+        
+        <td><a class="btn btn-sm btn-danger" href="{% url 'register'  %}">Add New User</a></td>
+       
+					<h1>User's Table</h1>
+
+				
+					<table class="table" id="example">
+						<tr>
+                            <th>User Id</th>
+                            <th>First Name</th>
+                            <th>last Name</th>
+                            <th>Username</th>
+                            <th>Is Superuser</th>
+                            <th>Email</th>
+                            <th>Date Joined</th>
+                            <th>Update</th>
+            
+                            <th>Removed</th>
+                        
+                           
+                            
+							
+						</tr>
+
+						{% for i in users %}
+							<tr>
+                                <td>{{i.id}}</td>
+                                <td>{{i.first_name}}</td>
+                                <td>{{i.last_name}}</td>
+                                <td>{{i.username}}</td>
+                                <td>{{i.is_superuser}}</td>
+                                <td>{{i.email}}</td>
+                                <td>{{i.date_joined}}</td>
+                               
+                                <td><a class="btn btn-sm btn-info" href="{% url 'updateUser' i.id %}">Update</a></td>
+                                
+
+                                <td><a class="btn btn-sm btn-danger" href="{% url 'deleteUsers' i.id  %}"><span class="glyphicon glyphicon-trash"></span>Delete</a></td>
+								
+                               
+                                
+								
+							</tr>
+						{% endfor %}
+						
+					</table>
+				
+		</div>
+
+        <script>
+            var table = $('#example').DataTable();
+ 
+// #myInput is a <input type="text"> element
+$('#myInput').on( 'keyup', function () {
+    table.search( this.value ).draw();
+} );
+        </script>    
+       
+</body>
+{% endblock content %}

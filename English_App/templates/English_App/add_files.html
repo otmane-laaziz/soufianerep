@@ -1,0 +1,54 @@
+
+{%extends  'English_App/basic.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" type="text/css"  href="{% static '/css/test.css' %}">
+    
+    <title>Document</title>
+</head>
+<body id="filebody">
+
+ 
+  
+  <div class="container" id="filecontainer">
+  
+  <div class="mt-5">
+  <form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% if user.is_authenticated  and user.is_superuser%}
+  {{addfileform.as_table}}
+  <button class="btn btn-primary" >Upload</button>
+  {% endif %}
+  
+  </form>
+  </div >
+  
+  
+
+ 
+  
+ 
+    {% for i in files %}
+    <div class="card"   id="fileid"  >
+      <h1 class="card-title">{{i.title}}</h1>
+      <div class="card-body">
+        {% if user.is_authenticated and  user.is_staff and user.is_superuser%}
+        <a class="btn btn-sm btn-danger" href="{% url 'deleteFile' i.id  %}"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+        {% endif %}
+        
+        <!--<button id="filedetailbutton"><h4><a href="{% url 'filedetail' i.id %}">Click for detail</a></h4></button><br>-->
+        <button id="filedownloaddetail"><h4><a href="{{i.pdf.url}}">Click to Download</a></h4></button><br>
+      </div>
+    </div>
+    {% endfor %}
+    
+</body>
+</html>
+{% endblock  %}

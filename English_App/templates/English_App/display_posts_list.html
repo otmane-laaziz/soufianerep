@@ -1,0 +1,38 @@
+
+
+{% extends 'English_App/basic.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" type="text/css"  href="{% static '/css/test.css' %}">
+    <title>Courses</title>
+</head>
+<body id="coursebody">
+   
+    {% for x in posts  %}
+    <div class="card" id="coursecardid">
+          
+          
+        
+        <div class="card-body">
+          <br>
+          <br>
+          <h2>A message from : </h2>
+            <h2> <a href="{% url 'displayEachMessage' x.id %}">{{x.first_name}} {{x.last_name}}</a></h2><br>
+            <br>
+            <br>
+            {% if user.is_authenticated and user.is_staff and user.is_superuser%}
+          <a class="btn btn-sm btn-danger" id="videodeletebutton" href="{% url 'deleteMessages' x.id %}"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+        {% endif %}
+        <br>
+        </div>
+      </div>
+      {% endfor %}
+</body>
+</html>
+{% endblock %}

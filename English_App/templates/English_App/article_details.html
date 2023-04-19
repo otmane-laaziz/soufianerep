@@ -1,0 +1,52 @@
+{%extends  'English_App/basic.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" type="text/css"  href="{% static '/css/test.css' %}"> 
+    <title>Display each post</title>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+          $("#hide").click(function(){
+            $("p").hide();
+          });
+          $("#show").click(function(){
+            $("p").show();
+          });
+        });
+        </script>
+        </head>
+</head>
+<body id="bodyarticledetail">
+   
+    <div id="articlediv2">
+        <h2>Author name : {{articledetails.author}} </h2>
+        <br>
+        <br>
+     <h3 id="articletitle"><strong>{{articledetails.title}}</strong></h3><br>
+     <br>
+    
+    <h4>{{articledetails.body | safe}}</h4>
+
+  
+
+    
+      
+       
+              
+       
+       
+       
+</div>
+
+   
+</body>
+</html>
+{% endblock %}
+

@@ -1,0 +1,47 @@
+
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link  rel="stylesheet" type="text/css"  href="{% static '/css/test.css' %}">
+</head>
+<body id="bodylogin">
+
+
+
+<form action="" method="post">
+   
+    {% csrf_token %}
+  
+
+  <div class="container" id="logincontainer">
+    <h2>Login Form</h2>
+    <label for="uname"><b>Username</b></label>
+    {{form.username}}
+
+    <label for="psw"><b>Password</b></label>
+    {{form.password}}
+        
+    <button type="submit">Login</button>
+    <label>
+      
+    </label>
+
+    <div >
+        <button type="button" class="cancelbtn" ><a href="{% url 'index' %}">Cancel</a></button>
+        <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a>.</p>
+        <p> <a href="{% url 'reset_password' %}">Forgot Password</a>.</p>
+       
+        <br>
+       
+      </div>
+  </div>
+
+  
+</form>
+
+</body>
+</html>
+{% endblock %}
