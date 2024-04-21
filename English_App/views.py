@@ -20,7 +20,7 @@ from .filters import ArticleFilter
 
 
 # Create your views here.
-
+# Test
 def index(request):
     return render(request, 'English_App/index.html')
 
